@@ -14,7 +14,7 @@ MoveModel _$MoveModelFromJson(Map<String, dynamic> json) => MoveModel(
       originalTitle: json['original_title'] as String,
       overview: json['overview'] as String,
       title: json['title'] as String,
-      posterPath: json['poster_path'] as String,
+      posterPath: json['poster_path'] as String?,
       releaseDate: json['release_date'] as String,
       id: (json['id'] as num).toInt(),
       popularity: (json['popularity'] as num).toInt(),

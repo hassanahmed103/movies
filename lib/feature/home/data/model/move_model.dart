@@ -14,7 +14,7 @@ class MoveModel {
   final String overview;
   final String title;
   @JsonKey(name: 'poster_path')
-  final String posterPath;
+  final String? posterPath;
   @JsonKey(name: 'release_date')
   final String releaseDate;
   final int id;

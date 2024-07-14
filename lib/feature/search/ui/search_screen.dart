@@ -7,8 +7,8 @@ import 'package:movies/core/theme/text_theme.dart';
 import 'package:movies/core/widget/search_app_bar.dart';
 import 'package:movies/feature/home/data/network/api_constants.dart';
 import 'package:movies/feature/search/logic/search_provider.dart';
-
 import '../../../core/routes/routes.dart';
+import '../../../core/widget/loadging_widget.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({super.key});
@@ -37,9 +37,10 @@ class SearchScreen extends ConsumerWidget {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20,),
           child: SafeArea(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SearchAppBar(
                   enabled: true,
@@ -61,11 +62,12 @@ class SearchScreen extends ConsumerWidget {
                     color: ColorsManager.white,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
                 searchResults.when(
                   data: (movies) {
                     return Expanded(
                       child: GridView.builder(
+                        padding: const EdgeInsets.only( left: 16, right: 16),
                         scrollDirection: Axis.vertical,
                         itemCount: movies.length,
                         gridDelegate:
@@ -85,11 +87,11 @@ class SearchScreen extends ConsumerWidget {
                                 children: [
                                   Expanded(
                                     child: AspectRatio(
-                                      aspectRatio: 3 / 2,
+                                      aspectRatio: 1 / 1,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(35),
                                         child: Image.network(
-                                          '${ApiConst.urlImage}${movies[index].posterPath}',
+                                          '${ApiConst.urlImagePoster}${movies[index].posterPath}',
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -131,12 +133,12 @@ class SearchScreen extends ConsumerWidget {
                       ),
                     );
                   },
-                  error: (err, stack) => Placeholder(),
-                  loading: () => CircularProgressIndicator(),
+                  error: (error, stackTrac) => ErrorWidget(error),
+                  loading: () => const LoadingWidget(),
                 ),
               ],
             ),
           ),
-        ));
+       ),);
   }
 }

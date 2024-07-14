@@ -29,7 +29,7 @@ class ImageDetails extends StatelessWidget {
             ),
           ),
           child: Image.network(
-            '${ApiConst.urlImage}${moveModel.backdropPath}',
+            '${ApiConst.urlImageBackdrop}${moveModel.backdropPath}',
             fit: BoxFit.fitWidth,
             width: double.infinity,
           ),
@@ -43,7 +43,7 @@ class ImageDetails extends StatelessWidget {
             child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(25)),
                 child: Image.network(
-                  '${ApiConst.urlImage}${moveModel.posterPath}',
+                  '${ApiConst.urlImagePoster}${moveModel.posterPath}',
                   fit: BoxFit.cover,
                 )),
           ),

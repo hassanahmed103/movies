@@ -58,26 +58,28 @@ class DetailsScreen extends StatelessWidget {
               ImageDetails(
                 moveModel:moveModel,
               ),
-              const SizedBox(
+             const SizedBox(
                 height: 100,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('over View',style: TextStyles.font18whiteSemiBold,),
-                  const SizedBox(height: 10,),
-                  SizedBox(
-                      height: 120,
-                      child: Expanded(child: Text(moveModel.overview,style: TextStyles.font14whiteRegular,)))
-                ],
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('over View',style: TextStyles.font18whiteSemiBold,),
+                    const SizedBox(height: 10,),
+                    SizedBox(
+                        height: 120,
+                        child: Text(moveModel.overview,style: TextStyles.font14whiteRegular,))
+                  ],
+                ),
               )
 
 
             ],
           ),
         ),
-        bottomNavigationBar: const BottomNavigationBarWidget(),
+      //  bottomNavigationBar: const BottomNavigationBarWidget(),
       ),
     );
   }

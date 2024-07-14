@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movies/core/helpers/extentions.dart';
 import 'package:movies/core/routes/routes.dart';
-import 'package:movies/core/widget/loaging_widget.dart';
+import 'package:movies/core/widget/loadging_widget.dart';
 import 'package:movies/feature/home/data/network/api_constants.dart';
 
 import '../../../../core/theme/text_theme.dart';
@@ -84,7 +84,7 @@ class MoviesListView extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.network(
-                              '${ApiConst.urlImage}${movies[index].posterPath}',
+                              '${ApiConst.urlImagePoster}${movies[index].posterPath}',
                               fit: BoxFit.cover,
                             ),
                           ),

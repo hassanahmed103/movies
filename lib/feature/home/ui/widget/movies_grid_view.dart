@@ -31,7 +31,7 @@ class MoviesGridView extends StatelessWidget {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
               child: Image.network(
-                '${ApiConst.urlImage}${movies[index].posterPath}',
+                '${ApiConst.urlImagePoster}${movies[index].posterPath}',
                 fit: BoxFit.cover,
               ),),
           );

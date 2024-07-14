@@ -18,14 +18,12 @@ class Api {
         'Authorization': 'Bearer $token',
       },
     );
-
     try {
       List data = jsonDecode(response.body)['results'];
       final movies = data.map((movie) => MoveModel.fromJson(movie)).toList();
       return movies;
     } catch (error) {
-      return throw Exception(
-          'there is problem in statues code ${response.statusCode}');
+      print(error);
     }
   }
 }

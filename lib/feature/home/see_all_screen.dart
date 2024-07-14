@@ -7,7 +7,7 @@ import 'package:movies/feature/home/logic/provider.dart';
 import '../../core/routes/routes.dart';
 import '../../core/theme/colors_helper.dart';
 import '../../core/theme/text_theme.dart';
-import '../../core/widget/loaging_widget.dart';
+import '../../core/widget/loadging_widget.dart';
 import '../../core/widget/search_app_bar.dart';
 import 'data/model/move_model.dart';
 import 'data/network/api_constants.dart';
@@ -78,7 +78,7 @@ class ListSeeAll extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(35),
                             child: Image.network(
-                              '${ApiConst.urlImage}${movies[index].posterPath}',
+                              '${ApiConst.urlImagePoster}${movies[index].posterPath}',
                               fit: BoxFit.cover,
         
                             ),
